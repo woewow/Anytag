@@ -1,0 +1,8 @@
+df <- read.table("longread_n_rd.txt")
+pdf("rds_num_in_longread.pdf")
+par(mar=c(5,5,4,2)+0.1)
+hist(df$V1, freq=F, las=2, col="limegreen", xlab="# of short reads", ylab="", xaxt="n", main="Distribution of # of short reads in CS reads")
+abline(v=mean(df$V1), col="red", lty=2)
+axis(1, labels=seq(0, 240, by=20), at=seq(0,240,by=20))
+mtext("Fraction of short reads", side=2, line=4, adj=0.5)
+dev.off()
